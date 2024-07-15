@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    //1.
+    <style>
+        #myDiv{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Дважды кликните меня</button>
+    <div id="myDiv"></div>
+
+    <script>
+        document.getElementById('myButton').addEventListener('dblclick', function(){
+            document.getElementById('myDiv').style.backgroundColor = 'green';
+        })
+    </script>
+</body>
+</html>
+
+//2.
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка клика по кнопке</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Нажмите меня</button>
+    <div id="myDiv"></div>
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            console.log('Кнопка была нажата!');
+        });
+    </script>
+</body>
+</html>
+
+//3
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двойной клик по любому элементу</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Нажмите меня</button>
+    <div id="myDiv"></div>
+
+    <script>
+        document.addEventListener('dblclick', function() {
+            console.log('Элемент был дважды кликнут!');
+        });
+    </script>
+</body>
+</html>
+
+//4
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица с обработкой двойного клика</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cell 1-1</td>
+                <td>Cell 1-2</td>
+                <td>Cell 1-3</td>
+            </tr>
+            <tr>
+                <td>Cell 2-1</td>
+                <td>Cell 2-2</td>
+                <td>Cell 2-3</td>
+            </tr>
+            <tr>
+                <td>Cell 3-1</td>
+                <td>Cell 3-2</td>
+                <td>Cell 3-3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.querySelectorAll('td').forEach(function(cell) {
+            cell.addEventListener('dblclick', function() {
+                this.textContent = 'Double clicked!';
+            });
+        });
+    </script>
+</body>
+</html>
+
+//5
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список изображений</title>
+    <style>
+        img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://i.pinimg.com/736x/e5/65/95/e5659552dcd86cf5d6adc46feec02e64.jpg" alt="Описание изображения 1">
+        <img src="https://i.pinimg.com/564x/75/d3/a1/75d3a17ce13df1e722d569db0a2f8ee1.jpg" alt="Описание изображения 2">
+        <img src="https://i.pinimg.com/564x/0e/d0/cf/0ed0cf4f2e80f6fc599e49ae40a8212e.jpg" alt="Описание изображения 3">
+        <img src="https://i.pinimg.com/236x/d9/90/32/d990321dfb769b1cf566c9434fdf914f.jpg" alt="Описание изображения 4">
+    </div>
+
+    <script>
+        document.querySelectorAll('img').forEach(function(img) {
+            img.addEventListener('dblclick', function() {
+                console.log(this.alt);
+            });
+        });
+    </script>
+</body>
+</html>
+
+//6
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка двойного клика по заголовку</title>
+</head>
+<body>
+    <h1 id="pageTitle">Заголовок страницы</h1>
+
+    <script>
+        document.getElementById('pageTitle').addEventListener('dblclick', function() {
+            this.textContent = 'Double clicked!';
+        });
+    </script>
+</body>
+</html>
+
+//7
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отслеживание нажатий клавиш</title>
+</head>
+<body>
+    <h1>Нажмите любую клавишу</h1>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            console.log(`Нажата клавиша: ${event.key}`);
+        });
+    </script>
+</body>
+</html>
+
+//8
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрос строки у пользователя</title>
+</head>
+<body>
+    <h1>Введите строку</h1>
+    <button id="promptButton">Запросить строку</button>
+
+    <script>
+        document.getElementById('promptButton').addEventListener('click', function() {
+            const userInput = prompt('Пожалуйста, введите строку:');
+            console.log(`Введенная строка: ${userInput}`);
+        });
+    </script>
+</body>
+</html>
+
+
+//9
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отслеживание отпускания клавиш</title>
+</head>
+<body>
+    <h1>Отпустите любую клавишу</h1>
+
+    <script>
+        document.addEventListener('keyup', function(event) {
+            console.log(`Отпущена клавиша: ${event.key}`);
+        });
+    </script>
+</body>
+</html>
